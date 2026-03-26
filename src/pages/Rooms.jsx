@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 
-const socket = io.connect("https://azouguaghapi-7t2v1uze.b4a.run");
+const socket = io.connect("https://azouguaghapi-5pk1qqs0.b4a.run");
 
 function Rooms() {
   const [rooms, setRooms] = useState([]);
@@ -21,7 +21,7 @@ function Rooms() {
 
   const fetchRooms = async () => {
     try {
-      const response = await axios.get('https://azouguaghapi-7t2v1uze.b4a.run/api/rooms');
+      const response = await axios.get('https://azouguaghapi-5pk1qqs0.b4a.run/api/rooms');
       setRooms(response.data);
     } catch (error) { console.error(error); }
   };
@@ -29,7 +29,7 @@ function Rooms() {
   const handleCreateRoom = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://azouguaghapi-7t2v1uze.b4a.run/api/rooms', {
+      await axios.post('https://azouguaghapi-5pk1qqs0.b4a.run/api/rooms', {
         name: newRoomName,
         admin_id: userId
       });
@@ -40,7 +40,7 @@ function Rooms() {
 
   const handleJoinRequest = async (roomId, adminId) => {
     try {
-      await axios.post('https://azouguaghapi-7t2v1uze.b4a.run/api/rooms/join', {
+      await axios.post('https://azouguaghapi-5pk1qqs0.b4a.run/api/rooms/join', {
         room_id: roomId,
         user_id: userId
       });
@@ -67,7 +67,7 @@ function Rooms() {
     formData.append('userId', userId);
 
     try {
-      const res = await axios.post('https://azouguaghapi-7t2v1uze.b4a.run/api/upload-avatar', formData);
+      const res = await axios.post('https://azouguaghapi-5pk1qqs0.b4a.run/api/upload-avatar', formData);
       const newUrl = res.data.imageUrl;
       setProfilePic(newUrl);
       localStorage.setItem('profilePic', newUrl);
