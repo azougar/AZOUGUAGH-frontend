@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import Peer from 'peerjs';
 import axios from 'axios';
 
-const socket = io.connect("https://azouguaghapi-5pk1qqs0.b4a.run");
+const socket = io.connect("https://azouguaghapi-tl53v6k9.b4a.run");
 
 function RoomDetail() {
   const { id } = useParams();
@@ -37,11 +37,11 @@ function RoomDetail() {
       });
     });
 
-    axios.get(`https://azouguaghapi-5pk1qqs0.b4a.run/api/rooms`).then(res => {
+    axios.get(`https://azouguaghapi-tl53v6k9.b4a.run/api/rooms`).then(res => {
       const room = res.data.find(r => r.id == id);
       if (room && room.admin_id == userId) {
         setIsAdmin(true);
-        axios.get(`https://azouguaghapi-5pk1qqs0.b4a.run/api/rooms/${id}/requests`).then(r => setRequests(r.data));
+        axios.get(`https://azouguaghapi-tl53v6k9.b4a.run/api/rooms/${id}/requests`).then(r => setRequests(r.data));
       }
     });
 
@@ -62,7 +62,7 @@ function RoomDetail() {
   };
 
   const handleResponse = async (uId, status) => {
-    await axios.post('https://azouguaghapi-5pk1qqs0.b4a.run/api/rooms/requests/respond', { room_id: id, user_id: uId, status });
+    await axios.post('https://azouguaghapi-tl53v6k9.b4a.run/api/rooms/requests/respond', { room_id: id, user_id: uId, status });
     setRequests(prev => prev.filter(req => req.user_id !== uId));
   };
 

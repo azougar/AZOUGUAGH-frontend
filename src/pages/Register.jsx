@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault(); // باش الصفحة ماتعاودش تشارجا
     try {
       // كنصيفطو الطلب للباكاند ديالنا
-      const response = await axios.post('https://azouguaghapi-5pk1qqs0.b4a.run/api/register', {
+      const response = await axios.post('https://azouguaghapi-tl53v6k9.b4a.run/api/register', {
         username: username,
         email: email,
         password: password
