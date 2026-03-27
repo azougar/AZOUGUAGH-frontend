@@ -14,7 +14,7 @@ function Login() {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.post('https://azouguaghapi-tl53v6k9.b4a.run/api/login', {
+      const response = await axios.post('https://azouguaghapi-43zktnq5.b4a.run/api/login', {
         email: email,
         password: password
       });

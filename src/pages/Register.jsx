@@ -15,7 +15,7 @@ function Register() {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.post('https://azouguaghapi-tl53v6k9.b4a.run/api/register', {
+      const response = await axios.post('https://azouguaghapi-43zktnq5.b4a.run/api/register', {
         username: username,
         email: email,
         password: password
